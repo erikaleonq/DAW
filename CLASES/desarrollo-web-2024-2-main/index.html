@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Emanuel Montoya">
+    <meta name="description" content="Ejemplo de clase">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de clase</title>
+    <link rel="stylesheet" href="./resources/styles/main.css">
+    <style>
+      p {
+        display: block;
+        background-color: blueviolet;
+        border: 10px dotted rgb(255 20 150 /0.7);
+        padding-top: 10px;
+        padding-bottom: 20px;
+        padding: 20px 10px 30px 50px;
+        margin: 50px;
+        /* border: 3px solid rgba(150, 150, 150, 1); */
+      }
+
+      /* [href]{
+        color: yellow;
+      } */
+      /* [href="#"]{
+        color: yellow;
+      } */
+      /* [href~="#"]{
+        color: yellow;
+      } */
+      /* [href|="otro"]{
+        color: yellow;
+      } */
+      /* [href*="otro"]{
+        color: yellow;
+      }
+      span.oscuro{
+        font-size: 1.5rem;
+        background-color: yellow;
+      } */
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mi pagina de ejemplo</h1>
+      <nav>
+        <ul>
+          <li><a href="#">uno</a></li>
+          <li><a href="./resources/pages/dos.html">dos</a></li>
+          <li><a href="http://facebook.com" target="_blank">tres</a></li>
+          <li><a href="b-otroasdf">cuadro</a></li>
+          <li><a href="#final">final</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Articulo sin secciones</h2>
+        <p style="background-color: grey">
+          Aca vamos a mostra un ejemplo de codigo:
+        </p>
+        <p class="bonito">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          odit facere sapiente sunt saepe maxime doloribus est et ullam rerum
+          excepturi, accusantium nihil, natus temporibus atque deleniti qui
+          dignissimos veritatis?
+        </p>
+
+        <pre><code>
+                &lt;nav&gt;
+                    &lt;ul
+                        &lt;li&gt;&lt;a href="#"&gt;uno&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;dos&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;tres&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;cuadro&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;cinco&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            </code>
+        </pre>
+      </section>
+      <section>
+        <article>
+          <h2>Articulo1 (seccion1)</h2>
+          <section>
+            <h2>seccion 1 articulo1</h2>
+            <p class="bonito asdf asd fasd fa asdf as fasdf asdf as dfas dfasdf">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Assumenda, ullam, <span class="oscuro">est vitae neque eveniet expedita ipsum
+              consequuntur quaerat consequatur et fuga ut necessitatibus
+              repudiandae animi saepe quos aperiam eius facere!</span>
+            </p>
+          </section>
+          <section>
+            <h2>seccion 2 articulo1</h2>
+            <p>
+              Dolores tempore corporis mollitia dolorem optio quis voluptatibus
+              sit alias? Blanditiis aut quasi, quam nihil nesciunt ratione sunt
+              perspiciatis similique eligendi earum animi ipsa dolore nostrum
+              eos illo dignissimos a!
+            </p>
+          </section>
+        </article>
+        <article>
+          <h2>articulo1 (seccion2)</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+            itaque. Voluptatem sapiente, et modi ipsam, nemo alias voluptas, est
+            voluptates dignissimos neque eum quis nesciunt a quo quaerat
+            laboriosam mollitia.
+          </p>
+        </article>
+        <article>
+          <h2>articulo2 (seccion2)</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+            itaque. Voluptatem sapiente, et modi ipsam, nemo alias voluptas, est
+            voluptates dignissimos neque eum quis nesciunt a quo quaerat
+            laboriosam mollitia.
+          </p>
+        </article>
+      </section>
+    </main>
+    <aside>
+        <ul>
+            <li>uno</li>
+            <li>dos</li>
+        </ul>
+    </aside>
+    <footer>
+      <p id="final">Emanuel Montoya <em>2024</em> &reg;</p>
+    </footer>
+  </body>
+</html>
