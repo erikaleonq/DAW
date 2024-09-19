@@ -1,10 +1,6 @@
-* {
-    border: 1px solid red; /* Borde rojo para todos los elementos */
-}
-
 body {
     font-family: Arial, sans-serif;
-    background: url('resourses/pexels-kovyrina-937980.jpg') no-repeat center center fixed;
+    background: url('../resourses/pexels-kovyrina-937980.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
 }
@@ -12,8 +8,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
 
 h1 {
@@ -43,10 +38,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: rgb(221, 255, 0);
     font-weight: bold;
     padding: 10px 20px;
-    border-radius: 5px;
+}
+
+.colums{
+    width: 30%;
 }
 
 .cards {
@@ -55,16 +53,16 @@ nav ul li a {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 50px;
+    margin: 20px 40px 0px 40px;
 }
 
 .card {
     background: rgba(0, 0, 0, 0.7);
     padding: 5px;
-    width: 350px;
     text-align: left;
     position: relative;
     box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
 }
 
 .card h2 {
@@ -88,30 +86,29 @@ nav ul li a {
 }
 
 .card.dns {
-    border-top: 2px solid red;
+    border-top: 5px solid red;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 .card.html {
-    border-top: 2px solid purple;
+    border-top: 5px solid purple;
     background-color: rgba(124, 21, 179, 0.8);
 }
 
 .card.css {
-    border-top: 2px solid cyan;
+    border-top: 5px solid cyan;
     background-color: rgba(7, 226, 204, 0.8);
 }
 
 .card.tcpip {
-    border-top: 2px solid pink;
+    border-top: 5px solid pink;
     background-color: rgba(213, 111, 111, 0.5);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-top: 30px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 footer p {
