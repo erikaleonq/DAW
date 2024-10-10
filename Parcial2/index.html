@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Erika Dayana León Quiroga">
+        <title>Segundo Parcial - Desarrollo de Aplicaciones Web</title>
+        <link rel="icon" href="../resourses/heartblack-icon.png" type="image/svg">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <script type="module" src="script/app.js"></script>
+    </head>
+    <body>
+    <header>
+        <h1>Gestión de Usuarios.</h1>
+    </header>
+    <main>
+        
+        <div class="container">
+            <div id="user-form" class="colums">
+                <h2>Formulario de Usuario</h2>
+                <form id="userForm">
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
+                    <input type="text" id="jobTitle" name="jobTitle" placeholder="Título del Trabajo" required>
+                    <input type="text" id="phone" name="phone" placeholder="Teléfono" required>
+                    <input type="text" id="photo" name="photo" placeholder="Link foto" required>
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+                <p id="formMessage"></p>
+            </div>
+
+            <div class="colums">
+                <h2>Listado de Usuarios</h2>
+                <div id="list-container"></div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="main.js"></script>
+    </body>
+</html>
