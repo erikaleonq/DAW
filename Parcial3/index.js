@@ -1,17 +1,13 @@
 import express from 'express';
-import dotenv from 'dotenv';
-import patientRoutes from './routes/pacienteR.js';
-import appointmentRoutes from './routes/appointR.js';
-import { errorHandler } from './middlewares/errorM.js';
-
-dotenv.config();
+import patientRoutes from './api/routes/pacienteR.js';
 
 const app = express();
 
+// Middleware para manejar JSON
 app.use(express.json());
-app.use('/paciente', patientRoutes);
-app.use('/appoint', appointmentRoutes);
-app.use(errorHandler);
+
+// Configuración de rutas
+app.use('/patient', patientRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

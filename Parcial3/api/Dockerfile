@@ -1,6 +1,6 @@
 FROM node:18
 #directorio de trabajo en el contenedor
-WORKDIR /usr/src/app 
+WORKDIR /usr/src/api
 COPY package*.json ./
 RUN npm install
 COPY . .

@@ -1,5 +1,7 @@
 BEGIN;
 
+ALTER USER postgres WITH password 'abcd';
+
 CREATE TABLE IF NOT EXISTS specialty (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL
@@ -34,5 +36,8 @@ CREATE TABLE IF NOT EXISTS medicalappointment (
     UNIQUE (doctor_id, date, hour),
     UNIQUE (patient_id, date, hour)
 );
+
+
+-- GRANT ALL PRIVILEGES ON DATABASE clinica TO erika;
 
 COMMIT;
