@@ -9,5 +9,6 @@ const validatePatientId = (req, res, next) => {
     next();
 };
 
+
 export default validatePatientId;
 
