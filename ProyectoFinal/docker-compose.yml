@@ -1,0 +1,22 @@
+name: backend
+services:
+  api:
+    build:
+      container_name: api
+      context: .
+      dockerfile: ./api/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    build: db
+    container_name: postdb
+    env_file:
+      - ./db/.env
+    ports:
+      - "5432:5432"
