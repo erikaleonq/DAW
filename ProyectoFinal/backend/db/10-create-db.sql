@@ -30,4 +30,8 @@ CREATE TABLE proyectos_seguidos (
     FOREIGN KEY (id_proyecto) REFERENCES proyectos (id_proyecto) ON DELETE CASCADE
 );
 
+ALTER TABLE proyectos_seguidos
+ADD CONSTRAINT unique_user_project UNIQUE (id_usuario, id_proyecto);
+
+
 COMMIT;
