@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { body } from "express-validator";
-import { UserController } from "../controllers/UserController";
+import { UserController } from "../controllers/UserController.js" ;
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
 class UserRoutes {
     constructor() {
@@ -9,7 +10,7 @@ class UserRoutes {
 
         this.router
         .route("/")
-        .get(this.controller.getAll)
+        .get(authMiddleware(["admin"]), this.controller.getAll)
         .post(
             [
             body("full_name").trim().notEmpty(),
@@ -22,9 +23,9 @@ class UserRoutes {
 
         this.router
         .route("/:id")
-        .get(this.controller.getOne)
-        .put(this.controller.updateUser)
-        .delete(this.controller.deleteUser);
+        .get(authMiddleware(["inversionista", "emprendedor"]), this.controller.getOne)
+        .put(authMiddleware(["inversionista", "emprendedor"]), this.controller.updateUser)
+        .delete(authMiddleware(["admin"]), this.controller.deleteUser);
     }
 }
 

@@ -5,6 +5,7 @@ VALUES
 ('Carlos Martínez', 'carlos.martinez@example.com', 'password123', '5551234567', 'emprendedor'),
 ('Ana López', 'ana.lopez@example.com', 'securepassword', '5557654321', 'inversionista'),
 ('Jorge González', 'jorge.gonzalez@example.com', 'mypassword', '5559876543', 'emprendedor'),
+('admin', 'admin@example.com', 'admin', '5559876543', 'admin'),
 ('María Pérez', 'maria.perez@example.com', 'anotherpassword', '5553216789', 'inversionista');
 
 -- Insertar proyectos

@@ -1,4 +1,5 @@
 FROM postgres:17
 WORKDIR /docker-entrypoint-initdb.d
-COPY create.sql /docker-entrypoint-initdb.d/
-COPY insert.sql /docker-entrypoint-initdb.d/
+COPY 10-create-db.sql /docker-entrypoint-initdb.d/
+COPY 20-insert-db.sql /docker-entrypoint-initdb.d/
+COPY 30-user-setup.sql /docker-entrypoint-initdb.d/

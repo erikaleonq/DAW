@@ -1,6 +1,7 @@
 import { validationResult, matchedData } from "express-validator";
 import { UserService } from "../services/UserService.js";
 import { CustomError } from "../utils/CustomError.js";
+import { generateToken } from "../utils/jwtUtils.js";
 
 class UserController {
     #service;
@@ -9,6 +10,7 @@ class UserController {
     }
 
     getAll = async (req, res) => {
+        console.log("Usercontroller")
         const users = await this.#service.getAll();
         res.send(users);
     };
@@ -76,6 +78,25 @@ class UserController {
         res.status(204).send();
         } catch (error) {
         res.status(500).send({ message: error.message });
+        }
+    };
+
+
+    login = async (req, res) => {
+        const { email, password } = req.body;
+
+        console.log("UserController-login", email, password)
+        try {
+        const user = await this.#service.getByEmailAndPassword(email, password);
+        if (!user) {
+            return res.status(401).json({ message: "Invalid credentials" });
+        }
+
+        // Generar token JWT
+        const token = generateToken({ id: user.id, role: user.role });
+        res.json({ token });
+        } catch (error) {
+        res.status(500).json({ message: error.message });
         }
     };
 }
