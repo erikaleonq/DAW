@@ -1,0 +1,89 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .banner {
+    background: linear-gradient(45deg, #6b73ff, #000dff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+  }
+  
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .banner p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .banner .cta-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .featured-projects {
+    margin-top: 40px;
+  }
+  
+  .featured-projects h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .project-card {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .project-card p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .project-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .project-card button:hover {
+    background-color: #0056b3;
+  }
+  

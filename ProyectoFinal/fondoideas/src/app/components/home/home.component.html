@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+    <!-- Banner -->
+    <div class="banner">
+      <h1>Bienvenido a Fondo de Ideas</h1>
+      <p>Conecta emprendedores e inversionistas en un solo lugar.</p>
+      <button class="cta-button" routerLink="/proyectos">Explorar Proyectos</button>
+    </div>
+  
+    <!-- Proyectos Destacados -->
+    <div class="featured-projects">
+      <h2>Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of featuredProjects">
+          <img [src]="project.url_logo" [alt]="project.nombre_proyecto" />
+          <h3>{{ project.nombre_proyecto }}</h3>
+          <p>{{ project.descripcion }}</p>
+          <button routerLink="/proyectos/{{ project.id_proyecto }}">Ver Más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
