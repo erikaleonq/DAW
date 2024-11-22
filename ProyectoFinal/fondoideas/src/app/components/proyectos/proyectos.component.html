@@ -1,16 +1,37 @@
 <app-navbar></app-navbar>
 
-<div class="home-container">
-    <h1>Bienvenido a Fondo de Ideas</h1>
-    <p>Conecta emprendedores e inversionistas en un solo lugar.</p>
-  
-    <div class="projects-grid">
-      <div class="project-card" *ngFor="let project of featuredProjects">
-        <img [src]="project.url_logo" [alt]="project.nombre_proyecto" />
-        <h3>{{ project.nombre_proyecto }}</h3>
-        <p>{{ project.descripcion }}</p>
-        <button routerLink="/proyectos/{{ project.id_proyecto }}">Ver Más</button>
+  <div class="home-container">
+      <h1>Bienvenido a Fondo de Ideas</h1>
+
+      <p>
+        Fondo de Ideas es la <strong>plataforma líder</strong> para conectar 
+        <span style="color: #31afb4; font-weight: bold;">emprendedores visionarios</span> con 
+        inversionistas que creen en el <strong>impacto del futuro</strong>.
+      </p>
+      <p>
+        <em>Explora proyectos transformadores, invierte en lo que importa, y 
+        <strong>crea un impacto global</strong>.</em>
+      </p>
+    
+      <div class="filter-container">
+        <label for="categoryFilter">Filtrar por categoría:</label>
+        <select id="categoryFilter" (change)="onFilterChange($event)">
+          <option value="all">Todas</option>
+          <option value="ecología">Ecología</option>
+          <option value="tecnología">Tecnología</option>
+          <option value="orgánico">Orgánico</option>
+          <!-- Añade más categorías aquí -->
+        </select>
       </div>
-    </div>
+  
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of filteredProjects">
+          <img [src]="project.url_logo" [alt]="project.nombre_proyecto" />
+          <h3>{{ project.nombre_proyecto }}</h3>
+          <p>{{ project.descripcion }}</p>
+          <button routerLink="/proyectos/{{ project.id_proyecto }}">Ver Más</button>
+        </div>
+      </div>
+      
   </div>
   

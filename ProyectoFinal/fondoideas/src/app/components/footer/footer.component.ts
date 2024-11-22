@@ -10,12 +10,10 @@ export class FooterComponent {
   isAuthenticated: boolean = false;
 
   constructor(private authService: AuthService) {
-    // Verificar si el usuario está autenticado
     this.isAuthenticated = this.authService.isAuthenticated();
   }
 
   logout(): void {
-    // Método para cerrar sesión
     this.authService.logout();
   }
 }

@@ -7,8 +7,9 @@
     <div class="menu-toggle" (click)="toggleMenu()">&#9776;</div>
   
     <ul [class.show]="menuOpen">
-      <li><a routerLink="/">Inicio</a></li>
+      <li *ngIf="!isAuthenticated"><a routerLink="/">Inicio</a></li>
       <li><a href="/proyectos">Proyectos</a></li>
+      <li *ngIf="userRole === 'emprendedor'"><a routerLink="/crear-proyecto">Crear Proyecto</a></li>
       <li *ngIf="!isAuthenticated"><a routerLink="/login">Iniciar Sesión</a></li>
       <li *ngIf="!isAuthenticated"><a href="/registro">Registro</a></li>
       <li *ngIf="isAuthenticated">

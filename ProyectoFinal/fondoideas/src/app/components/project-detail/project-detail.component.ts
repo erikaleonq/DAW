@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -9,28 +10,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./project-detail.component.scss'],
 })
 export class ProjectDetailComponent implements OnInit {
-  project: any; // Variable para almacenar el proyecto
+  project: any;
+  userRole: string | null = null;
 
   constructor(
-    private route: ActivatedRoute, // Para acceder a los parámetros de la ruta
-    private router: Router,
-    private projectService: ProjectService // Servicio para obtener los proyectos
+    private route: ActivatedRoute,
+    private projectService: ProjectService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id'); // Obtener el parámetro ID de la URL
-    if (id) {
-      this.loadProjectDetails(id);
+    const projectId = this.route.snapshot.paramMap.get('id');
+    if (projectId) {
+      this.projectService.getProjectById(projectId).subscribe({
+        next: (data) => (this.project = data),
+        error: (err) => console.error('Error al cargar el proyecto:', err),
+      });
+
+      this.authService.getUserRole().subscribe({
+        next: (userData) => {
+          this.userRole = userData.role;
+        },
+        error: (err) => console.error('Error al obtener el rol del usuario:', err),
+      });
     }
   }
 
-  loadProjectDetails(id: string): void {
-    this.projectService.getProjectById(id).subscribe({
-      next: (project) => (this.project = project),
-      error: (err) => {
-        console.error('Error al cargar el proyecto:', err);
-        this.router.navigate(['/']);
-      },
-    });
+  onSupportProject(): void {
+    alert(
+      'Gracias por apoyar este proyecto. ¡Pronto nos pondremos en contacto contigo!'
+    );
   }
 }

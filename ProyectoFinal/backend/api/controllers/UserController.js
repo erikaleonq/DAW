@@ -15,6 +15,14 @@ class UserController {
         res.send(users);
     };
 
+    getUser = async (req, res) => {
+        console.log(req.user)
+        const userId = req.user.id; // ID del usuario extraído del token
+        console.log("Usercontroller")
+        const users = await this.#service.getUser(userId);
+        res.send(users);
+    };
+
     createUser = async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

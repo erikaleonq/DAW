@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="crear-proyecto-container">
+    <h2>Crear Nuevo Proyecto</h2>
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre_proyecto">Nombre del Proyecto</label>
+        <input id="nombre_proyecto" formControlName="nombre_proyecto" type="text" placeholder="Nombre del proyecto" required />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" formControlName="descripcion" placeholder="Descripción del proyecto" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="categorias">Categorías</label>
+        <input id="categorias" formControlName="categorias" type="text" placeholder="Categorías separadas por comas" />
+      </div>
+      <div class="form-group">
+        <label for="url_logo">URL del Logo</label>
+        <input id="url_logo" formControlName="url_logo" type="text" placeholder="URL del logo del proyecto" />
+      </div>
+      <div class="form-group">
+        <label for="redes">Redes Sociales</label>
+        <input id="redes" formControlName="redes" type="text" placeholder="Enlaces de redes sociales separados por comas" />
+      </div>
+      <button type="submit" class="btn btn-submit">Crear Proyecto</button>
+    </form>
+  </div>
+
+  <app-footer></app-footer>

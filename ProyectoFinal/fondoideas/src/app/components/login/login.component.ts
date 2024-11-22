@@ -17,8 +17,8 @@ export class LoginComponent {
   onSubmit(): void {
     this.authService.login(this.email, this.password).subscribe({
       next: (response) => {
-        this.authService.saveToken(response.token); // Guardar el token
-        this.router.navigate(['/']); // Redirigir al Home
+        this.authService.saveToken(response.token);
+        this.router.navigate(['/proyectos']);
       },
       error: (err) => {
         console.error('Error al iniciar sesión:', err);

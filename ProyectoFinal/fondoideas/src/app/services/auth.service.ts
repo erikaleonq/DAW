@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000/login'; // Endpoint del backend para login
-  private baseUrl2 = 'http://localhost:3000/'; // Endpoint del backend para login
+  private baseUrl = 'http://localhost:3000/login';
+  private baseUrl2 = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
@@ -16,23 +16,34 @@ export class AuthService {
   }
 
   saveToken(token: string): void {
-    localStorage.setItem('authToken', token); // Guardar el token en localStorage
+    localStorage.setItem('authToken', token); 
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken'); // Obtener el token desde localStorage
+    return localStorage.getItem('authToken'); 
   }
 
   isAuthenticated(): boolean {
-    return !!this.getToken(); // Verificar si el token existe
+    return !!this.getToken();
   }
 
   logout(): void {
-    localStorage.removeItem('authToken'); // Eliminar el token del almacenamiento
+    localStorage.removeItem('authToken');
   }
 
   register(userData: any): Observable<any> {
     console.log(userData)
     return this.http.post(`${this.baseUrl2}/users`, userData);
   }
+
+  getUserRole(): Observable<any> {
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('Usuario no autenticado');
+    }
+  
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.baseUrl2}/users`, { headers });
+  }
+  
 }

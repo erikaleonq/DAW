@@ -10,7 +10,7 @@ class UserRoutes {
 
         this.router
         .route("/")
-        .get(authMiddleware(["admin"]), this.controller.getAll)
+        .get(authMiddleware(), this.controller.getUser)
         .post(
             [
             body("full_name").trim().notEmpty(),

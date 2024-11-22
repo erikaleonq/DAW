@@ -33,8 +33,12 @@ class ProjectController {
     }
 
     const data = matchedData(req);
+    const id_emprendedor = req.user.id;
     try {
-      const project = await this.#service.createProject(data);
+      const project = await this.#service.createProject({
+        ...data,
+        id_emprendedor, 
+      });
       res.status(201).send(project);
     } catch (error) {
       res.status(500).json({ message: error.message });

@@ -25,7 +25,6 @@ export class RegistroComponent {
     });
   }
 
-  // Acceso rápido a los campos del formulario
   get f() {
     return this.registroForm.controls;
   }
@@ -33,16 +32,14 @@ export class RegistroComponent {
   onSubmit(): void {
     this.submitted = true;
 
-    // Si el formulario no es válido, detener la ejecución
     if (this.registroForm.invalid) {
       return;
     }
 
-    // Enviar los datos al backend
     this.authService.register(this.registroForm.value).subscribe({
       next: () => {
         alert('Registro exitoso');
-        this.router.navigate(['/login']); // Redirigir al login
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         console.error('Error al registrar usuario:', err);

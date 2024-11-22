@@ -5,24 +5,19 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
+import { CrearProyectoComponent } from './components/crear-proyecto/crear-proyecto.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, // Ruta para el Home
-  { 
-    path: 'proyectos', 
-    component: ProyectosComponent,
-    // canActivate: [AuthGuard], 
-  }, // Proyectos
-  { 
-    path: 'proyectos/:id',
-    component: ProjectDetailComponent,
-    canActivate: [AuthGuard], // Protegemos esta ruta
-  },
-  { path: 'login', component: LoginComponent },
-  { path: 'registro', component: RegistroComponent },
-  { path: '**', redirectTo: '' }, // Ruta para manejar cualquier URL desconocida
+  { path: '', component: HomeComponent }, 
+  { path: 'proyectos', component: ProyectosComponent}, // canActivate: [AuthGuard] },
+  { path: 'proyectos/:id', component: ProjectDetailComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'registro', component: RegistroComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'crear-proyecto', component: CrearProyectoComponent },
+  { path: '**', redirectTo: 'proyectos' },
 ];
 
 @NgModule({

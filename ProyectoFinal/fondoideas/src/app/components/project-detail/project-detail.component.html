@@ -1,16 +1,39 @@
 <app-navbar></app-navbar>
-<div class="project-detail-container">
-    <h1>{{ project?.nombre_proyecto }}</h1>
-    <img *ngIf="project?.url_logo" [src]="project.url_logo" [alt]="project.nombre_proyecto" />
-    <p><strong>Descripción:</strong> {{ project?.descripcion }}</p>
-    <p><strong>Categorías:</strong> {{ project?.categorias?.join(', ') }}</p>
-    <p><strong>Redes Sociales:</strong></p>
-    <ul>
-      <li *ngFor="let red of project?.redes">
-        <a [href]="red" target="_blank">{{ red }}</a>
+<div class="project-view-container">
+  <div class="project-header">
+    <img [src]="project.url_logo" [alt]="project.nombre_proyecto" class="project-logo" />
+    <div class="project-info">
+      <h1>{{ project.nombre_proyecto }}</h1>
+      <p class="project-description">{{ project.descripcion }}</p>
+      <p class="project-categories">
+        Categorías:
+        <span *ngFor="let category of project.categorias" class="category">
+          {{ category }}
+        </span>
+      </p>
+      <p class="project-date">
+        Publicado el: {{ project.fecha_publi | date:'longDate' }}
+      </p>
+      
+      <!-- Botón visible solo para inversionistas -->
+      <button
+        *ngIf="userRole === 'inversionista'"
+        class="btn-support"
+        (click)="onSupportProject()"
+      >
+        Apoyar Proyecto
+      </button>
+    </div>
+  </div>
+
+  <div class="project-details">
+    <h2>Redes Sociales</h2>
+    <ul class="social-links">
+      <li *ngFor="let link of project.redes">
+        <a [href]="link" target="_blank">{{ link }}</a>
       </li>
     </ul>
-    <button routerLink="/">Volver al Inicio</button>
   </div>
-  
-  
+</div>
+
+<app-footer></app-footer>  

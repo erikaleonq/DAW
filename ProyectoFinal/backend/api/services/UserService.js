@@ -2,6 +2,17 @@ import { Db } from "../database/Db.js";
 import { CustomError } from "../utils/CustomError.js";
 
 class UserService {
+
+    getUser = async (userId) => {
+        try {
+            const result = await new Db().query_('SELECT id, full_name, email, role FROM users WHERE id = $1', [userId]);
+            
+            return result.rows[0];
+        } catch (error) {
+            throw new CustomError(error.code, error.detail);
+        }
+    }
+
     getAll = async () => {
         try {
         const results = await new Db().query_("SELECT * FROM users");

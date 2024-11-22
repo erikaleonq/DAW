@@ -10,11 +10,21 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   isAuthenticated: boolean = false;
   menuOpen: boolean = false;
+  userRole: string | null = null;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.isAuthenticated = this.authService.isAuthenticated();
+
+    if (this.isAuthenticated) {
+      this.authService.getUserRole().subscribe({
+        next: (userData) => {
+          this.userRole = userData.role;
+        },
+        error: (err) => console.error('Error al obtener el rol:', err),
+      });
+    }
   }
 
   toggleMenu(): void {
@@ -23,7 +33,7 @@ export class NavbarComponent implements OnInit {
 
   onLogout(): void {
     this.authService.logout();
-    this.isAuthenticated = false; // Actualizar el estado
+    this.isAuthenticated = false;
     this.router.navigate(['/login']);
   }
 }
