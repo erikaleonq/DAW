@@ -1,15 +1,19 @@
-
-<header>
-    <nav>
-        <div class="logo">
-            <img src="../../../assets/img/logo.png" alt="Logo Fondo de Ideas" class="logo-img">
-            <h1 class="title">Fondo de Ideas</h1>
-        </div>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="../pages/registro.html">Registro</a></li>
-            <li><a href="../pages/login.html">Iniciar Sesiónxx</a></li>
-        </ul>
-    </nav>
-</header>
+<nav>
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="Logo Fondo de Ideas" class="logo-img" />
+      <h1 class="title">Fondo de Ideas</h1>
+    </div>
+  
+    <div class="menu-toggle" (click)="toggleMenu()">&#9776;</div>
+  
+    <ul [class.show]="menuOpen">
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a href="/proyectos">Proyectos</a></li>
+      <li *ngIf="!isAuthenticated"><a routerLink="/login">Iniciar Sesión</a></li>
+      <li *ngIf="!isAuthenticated"><a href="/registro">Registro</a></li>
+      <li *ngIf="isAuthenticated">
+        <button (click)="onLogout()">Cerrar Sesión</button>
+      </li>
+    </ul>
+  </nav>
+  

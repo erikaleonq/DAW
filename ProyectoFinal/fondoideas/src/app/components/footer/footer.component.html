@@ -1,0 +1,31 @@
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/img/logo.png" alt="Fondo de Ideas Logo" class="footer-logo-img" />
+        <h2 class="footer-title">Fondo de Ideas</h2>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces Útiles</h3>
+        <ul>
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a routerLink="/proyectos">Proyectos</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLink="/registro">Registro</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLink="/login">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contacto</h3>
+        <p>Email: <a href="mailto:info&#64;fondodeideas.com">info&#64;fondodeideas.com</a></p>
+        <p>Teléfono: +57 300 123 4567</p>
+        <div class="social-links">
+          <a href="https://instagram.com/fondodeideas" target="_blank">
+            <img src="assets/img/instagram.png" alt="Instagram" class="social-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Fondo de Ideas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  

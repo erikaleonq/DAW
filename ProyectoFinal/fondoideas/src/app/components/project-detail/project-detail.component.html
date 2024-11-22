@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="project-detail-container">
+    <h1>{{ project?.nombre_proyecto }}</h1>
+    <img *ngIf="project?.url_logo" [src]="project.url_logo" [alt]="project.nombre_proyecto" />
+    <p><strong>Descripción:</strong> {{ project?.descripcion }}</p>
+    <p><strong>Categorías:</strong> {{ project?.categorias?.join(', ') }}</p>
+    <p><strong>Redes Sociales:</strong></p>
+    <ul>
+      <li *ngFor="let red of project?.redes">
+        <a [href]="red" target="_blank">{{ red }}</a>
+      </li>
+    </ul>
+    <button routerLink="/">Volver al Inicio</button>
+  </div>
+  
+  

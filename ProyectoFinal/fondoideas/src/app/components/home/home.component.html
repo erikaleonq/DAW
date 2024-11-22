@@ -1,24 +1,115 @@
 <app-navbar></app-navbar>
 
-<div class="home-container">
-    <!-- Banner -->
-    <div class="banner">
-      <h1>Bienvenido a Fondo de Ideas</h1>
-      <p>Conecta emprendedores e inversionistas en un solo lugar.</p>
-      <button class="cta-button" routerLink="/proyectos">Explorar Proyectos</button>
+<!-- Promo Section -->
+<section id="inicio" class="promo">
+  <div class="promo-content">
+    <h1>Conecta tu Visión con el Futuro</h1>
+    <p>Descubre proyectos innovadores o encuentra el inversor ideal para hacer realidad tus ideas.</p>
+    <a routerLink="/registro" class="btn btn-promo">¡Únete Ahora!</a>
+  </div>
+</section>
+
+<!-- Sección de Información -->
+<section id="caracteristicas" class="caracteristicas">
+  <h2>¿Por qué elegir Fondo de Ideas?</h2>
+  <div class="caracteristicas-container">
+    <div class="caracteristica">
+      <img src="assets/img/imagen4.jpg" alt="Conexiones Globales" />
+      <h3>Conexiones Globales</h3>
+      <p>Conecta con inversionistas y emprendedores de todo el mundo.</p>
     </div>
-  
-    <!-- Proyectos Destacados -->
-    <div class="featured-projects">
-      <h2>Proyectos Destacados</h2>
-      <div class="projects-grid">
-        <div class="project-card" *ngFor="let project of featuredProjects">
-          <img [src]="project.url_logo" [alt]="project.nombre_proyecto" />
-          <h3>{{ project.nombre_proyecto }}</h3>
-          <p>{{ project.descripcion }}</p>
-          <button routerLink="/proyectos/{{ project.id_proyecto }}">Ver Más</button>
+    <div class="caracteristica">
+      <img src="assets/img/imagen5.jpeg" alt="Proyectos Innovadores" />
+      <h3>Proyectos Innovadores</h3>
+      <p>Accede a ideas que están cambiando el futuro en distintos sectores.</p>
+    </div>
+    <div class="caracteristica">
+      <img src="assets/img/imagen6.jpg" alt="Seguridad y Confianza" />
+      <h3>Seguridad y Confianza</h3>
+      <p>Garantizamos la seguridad de tus datos y la transparencia en todas las transacciones.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Canales de Contacto -->
+<section id="canales" class="contact-channels section">
+  <div class="container">
+    <h2>Canales de Interacción</h2>
+    <div class="channels">
+      <div class="channel">
+        <div class="icon">
+          <img src="assets/img/logo.png" alt="Aplicación Web" />
         </div>
+        <h3>Aplicación Web</h3>
+        <p>
+          La plataforma principal es esta web donde los usuarios pueden acceder
+          a toda la información necesaria, gestionar sus inversiones y
+          proyectos, y explorar oportunidades.
+        </p>
+      </div>
+      <div class="channel">
+        <div class="icon">
+          <img src="assets/img/mail_img.png" alt="Correo Electrónico" />
+        </div>
+        <h3>Correo Electrónico</h3>
+        <p>
+          Para cualquier información adicional comunicarse a
+          info&#64;fondodeideas.com
+        </p>
+      </div>
+      <div class="channel">
+        <div class="icon">
+          <img src="assets/img/instagram.png" alt="Instagram" />
+        </div>
+        <h3>Redes Sociales</h3>
+        <p>
+          Síguenos en Instagram para ser el primero en enterarte de información
+          relevante sobre Fondo de Ideas.
+        </p>
       </div>
     </div>
   </div>
-  
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="services">
+    <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="assets/img/consultoria-icon.png" alt="Consultoría">
+                <h3>Asesoramiento personalizado</h3>
+                <p>Brindamos asesoramiento especializado para que encuentres los proyectos más relevantes.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/img/evaluacion-icon.png" alt="Evaluación de Proyectos">
+                <h3>Evaluación de Proyectos</h3>
+                <p>Evaluamos los proyectos para garantizar calidad y potencial de éxito.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/img/seguridad-icon.png" alt="Seguridad y Soporte">
+                <h3>Seguridad y Soporte</h3>
+                <p>Proporcionamos una plataforma segura con soporte continuo para los usuarios.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Sección de Testimonios -->
+<section id="testimonios" class="testimonios">
+  <h2>Lo que dicen nuestros usuarios</h2>
+  <div class="testimonios-container">
+      <div class="testimonio-card">
+          <p>"Gracias a Fondo de Ideas, mi proyecto ha obtenido el financiamiento necesario para expandirse a nuevos mercados. ¡Recomiendo esta plataforma a todos los emprendedores!"</p>
+          <h4>- Usuario 1</h4>
+      </div>
+      <div class="testimonio-card">
+          <p>"He encontrado oportunidades increíbles de inversión y el proceso ha sido muy sencillo y seguro."</p>
+          <h4>- Usuario 2</h4>
+      </div>
+  </div>
+</section>
+
+
+<app-footer></app-footer>

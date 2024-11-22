@@ -1,230 +1,125 @@
+/* General */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Encabezado */
-header {
-    background-color: #115571; 
-    color: #fff;
-    padding: 1rem;
-}
-
-nav {
+    margin: 0; /* Elimina márgenes del body */
+    padding: 0; /* Elimina paddings del body */
+  }
+  
+  /* Navbar */
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #115571;
-}
-
-.logo {
+    background-color: #115571; /* Color principal */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Elimina cualquier margen del navbar */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
-}
-
-.logo img {
+  }
+  
+  .logo img {
     width: 50px;
     margin-right: 10px;
-}
-
-.title {
-    font-size: 2rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
     color: #fff;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-nav ul {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
+    align-items: center;
+  }
+  
+  nav ul li {
     margin-left: 20px;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Secciones Generales */
-.section {
-    padding: 80px 0;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 36px;
-    color: var(--primary-color);
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-
-/* Sección Promo */
-.promo {
-    color: #fff;
-    padding: 6rem 2rem;
-    text-align: center;
-    position: relative;
-}
-
-.promo::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(17, 85, 113, 0.85);
-    z-index: 1;
-}
-
-.promo-content {
-    position: relative;
-    z-index: 2;
-}
-
-.promo h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.promo p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #f0f0f0;
-}
-
-.btn-promo {
-    background-color: #31afb4;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.btn-promo:hover {
-    background-color: #218a90;
-}
-
-/* Sección de info */
-.caracteristicas {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-
-.caracteristicas-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.caracteristica {
-    margin: 1rem;
-    width: 30%;
-    min-width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease; 
-}
-
-.caracteristica:hover {
-    transform: translateY(-10px);
-}
-
-.caracteristica img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al hacer hover */
-}
-
-.caracteristica img:hover {
-    transform: scale(1.1); /* Agrandar la imagen ligeramente al hacer hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-}
-
-.titulo_carac{
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 24px;
-    color: #004d99;
-}
-
-.caracteristica h3 {
-    font-size: 1.5rem;
-    color: #115571;
-    margin-bottom: 0.5rem;
-}
-
-.caracteristica p {
-    color: #555;
-    font-size: 1.1rem;
-}
-
-/*Canales de Contacto */
-.contact-channels .channels {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.channel {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    width: 30%;
-    margin-bottom: 30px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.Web img{
-    width: 100px;
-    height: 100px;
-
-}
-
-.channel .icon {
-    margin-bottom: 20px;
-}
-
-.channel .icon img {
-    width: 100px;
-    height: 100px;
-}
-
-.channel h3 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #004d99;
-}
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #0e4560; /* Hover background */
+    color: #e0e0e0; /* Hover text color */
+  }
+  
+  .menu-toggle {
+    display: none; /* Ocultar por defecto */
+  }
+  
+  nav ul li button {
+    background-color: #ff4b4b; /* Color del botón cerrar sesión */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li button:hover {
+    background-color: #d63c3c; /* Hover del botón cerrar sesión */
+  }
+  
+  /* Para ajustar los márgenes del contenido principal */
+  .container {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina paddings */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background-color: #115571;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      display: none; /* Oculto por defecto */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  
+    nav ul.show {
+      display: flex; /* Mostrar cuando se activa */
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+    }
+  }
+  
